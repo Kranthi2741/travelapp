@@ -1,0 +1,90 @@
+
+> delusional-diary@1.0.0 build
+> tsc -b && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 1707 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                              0.89 kB │ gzip:   0.49 kB
+dist/assets/index-oPxhfBtO.css                                              81.45 kB │ gzip:  19.18 kB
+dist/assets/chandigarh-RJ26EPBK-CWKBKkpW.js                                  0.48 kB │ gzip:   0.29 kB
+dist/assets/chandigarh-WXDKUOGB-CEPx6pFB.js                                  1.08 kB │ gzip:   0.49 kB
+dist/assets/dadra-and-nagar-haveli-and-daman-and-diu-5IVVCCVB-Bsjpn15k.js    3.21 kB │ gzip:   1.16 kB
+dist/assets/lakshadweep-PPOS4OJV-D09gUfpk.js                                 3.32 kB │ gzip:   1.15 kB
+dist/assets/goa-WPXAWOOR-BKHC2BR4.js                                         3.88 kB │ gzip:   1.40 kB
+dist/assets/lakshadweep-KLEFT54J-D-ywKyTd.js                                 3.97 kB │ gzip:   1.38 kB
+dist/assets/puducherry-IL4QCQAP-Byx9E4WT.js                                  4.15 kB │ gzip:   1.56 kB
+dist/assets/sikkim-TFIR27PM-BqxBSwO2.js                                      4.72 kB │ gzip:   1.56 kB
+dist/assets/dadra-and-nagar-haveli-and-daman-and-diu-F5IDZSEX-CetGLSrW.js    5.42 kB │ gzip:   1.94 kB
+dist/assets/delhi-PSIGSJYQ-CrS4sG5T.js                                       6.38 kB │ gzip:   1.79 kB
+dist/assets/puducherry-K7AT4XV7-COjWXWIX.js                                  8.50 kB │ gzip:   3.07 kB
+dist/assets/tripura-J642WRNU-BT21ozB_.js                                     9.19 kB │ gzip:   2.94 kB
+dist/assets/goa-IBWXBDR5-Ch8JmImY.js                                        10.48 kB │ gzip:   3.45 kB
+dist/assets/sikkim-H5ON3FIQ-B7E1brQK.js                                     11.75 kB │ gzip:   3.79 kB
+dist/assets/delhi-CLS6JSMQ-DvMvP_X6.js                                      12.88 kB │ gzip:   3.50 kB
+dist/assets/ladakh-HI2VNTR3-Ccxan3gR.js                                     13.47 kB │ gzip:   4.66 kB
+dist/assets/meghalaya-AYM7ARGY-BCcs0PDC.js                                  13.59 kB │ gzip:   4.22 kB
+dist/assets/nagaland-M2EOC7BD-BwDHIV-k.js                                   14.17 kB │ gzip:   4.31 kB
+dist/assets/mizoram-GGNOTXYS-VV9wPHsK.js                                    15.30 kB │ gzip:   4.78 kB
+dist/assets/manipur-OATSVWAW-hu3wtCqh.js                                    19.34 kB │ gzip:   5.74 kB
+dist/assets/kerala-AVM5UZO7-BoGxBscN.js                                     20.91 kB │ gzip:   6.67 kB
+dist/assets/himachal-pradesh-3SMPHSXA-L3NfDkDN.js                           23.96 kB │ gzip:   7.66 kB
+dist/assets/tripura-M66VJYF5-DQDzRFfb.js                                    24.38 kB │ gzip:   7.83 kB
+dist/assets/uttarakhand-OGQLV2C7-DR7ldfWK.js                                25.90 kB │ gzip:   8.28 kB
+dist/assets/jammu-and-kashmir-D52B7NRE-TmI6fH-H.js                          27.62 kB │ gzip:   8.54 kB
+dist/assets/arunachal-pradesh-FQJEU2ZI-BzyGrhFr.js                          33.24 kB │ gzip:  10.18 kB
+dist/assets/ladakh-DJ2L4EHR-0wDmyukD.js                                     34.14 kB │ gzip:  11.85 kB
+dist/assets/meghalaya-VLMLM7GV-DV_IDJeb.js                                  34.57 kB │ gzip:  10.67 kB
+dist/assets/haryana-EX5I4N3L-DNjY54TL.js                                    35.45 kB │ gzip:  11.57 kB
+dist/assets/andaman-and-nicobar-islands-7IGLPHNJ-8_WbwUHZ.js                39.54 kB │ gzip:  13.31 kB
+dist/assets/nagaland-G4YIAI5X-Cpa4RaMK.js                                   40.09 kB │ gzip:  12.40 kB
+dist/assets/punjab-34PSBYOX-msGaCF1U.js                                     40.41 kB │ gzip:  12.78 kB
+dist/assets/jharkhand-UEYCO6AO-Be3bGgWI.js                                  46.84 kB │ gzip:  15.29 kB
+dist/assets/mizoram-6HVL4M6E-o2Ubrv8s.js                                    47.74 kB │ gzip:  14.83 kB
+dist/assets/manipur-2UEQNDWA-CQZGf6sR.js                                    53.72 kB │ gzip:  16.17 kB
+dist/assets/kerala-6CVQJIDT-Tqp7v21I.js                                     56.62 kB │ gzip:  18.23 kB
+dist/assets/assam-2DH3NWKA-W1efMB0C.js                                      57.02 kB │ gzip:  18.45 kB
+dist/assets/telangana-4MIEA4U4-CfT3DYDQ.js                                  59.81 kB │ gzip:  19.82 kB
+dist/assets/himachal-pradesh-DZB7HURL-Dejh77Ad.js                           64.32 kB │ gzip:  20.17 kB
+dist/assets/chhattisgarh-5LBBQZPY-BmOJBDA2.js                               65.96 kB │ gzip:  21.72 kB
+dist/assets/bihar-5ML5JOCL-DjGesGRh.js                                      67.14 kB │ gzip:  20.74 kB
+dist/assets/west-bengal-GJDLA63V-DXZGWQC1.js                                68.10 kB │ gzip:  23.58 kB
+dist/assets/andaman-and-nicobar-islands-LRASUNY5-PlPIB9ia.js                68.75 kB │ gzip:  24.38 kB
+dist/assets/odisha-VZG3WATI-BaV9lxEY.js                                     70.64 kB │ gzip:  22.92 kB
+dist/assets/jammu-and-kashmir-CIHGRFR7-DN_lgUmw.js                          72.18 kB │ gzip:  23.29 kB
+dist/assets/uttarakhand-ID4IZBLT-DsPZW8aw.js                                73.89 kB │ gzip:  23.65 kB
+dist/assets/arunachal-pradesh-NGIAKNSN-DHURw2Gj.js                          75.20 kB │ gzip:  25.49 kB
+dist/assets/andhra-pradesh-EFKLCZG5-Dl2owzC4.js                             77.10 kB │ gzip:  26.96 kB
+dist/assets/haryana-72K3HEK5-CdFTZIG8.js                                    85.47 kB │ gzip:  27.22 kB
+dist/assets/tamil-nadu-QIF2U6M3-DlBa0bb7.js                                 88.26 kB │ gzip:  29.42 kB
+dist/assets/karnataka-G4J6QCUK-qBwuiLdr.js                                  94.42 kB │ gzip:  30.42 kB
+dist/assets/gujarat-644AENUQ-OYi8M7M1.js                                   100.53 kB │ gzip:  34.61 kB
+dist/assets/punjab-KDCCZQ2I-BriFoV7V.js                                    110.32 kB │ gzip:  36.39 kB
+dist/assets/rajasthan-GFEOB56H-B7h0yEjl.js                                 122.08 kB │ gzip:  40.23 kB
+dist/assets/maharashtra-ATOV5643-BlgtTfrI.js                               122.40 kB │ gzip:  40.99 kB
+dist/assets/jharkhand-VVQ5V7IP-B-nOmJzd.js                                 126.66 kB │ gzip:  43.59 kB
+dist/assets/telangana-6DKXE3R7-CxB2dRrM.js                                 143.37 kB │ gzip:  49.30 kB
+dist/assets/assam-IJPMTTCR-B_s9_ZGJ.js                                     156.68 kB │ gzip:  50.63 kB
+dist/assets/madhya-pradesh-AN3XB7HE-D_7Bi5la.js                            158.21 kB │ gzip:  52.56 kB
+dist/assets/uttar-pradesh-DBMQAFD2-CiJm7Lkh.js                             162.24 kB │ gzip:  52.50 kB
+dist/assets/chhattisgarh-5BODQOLD-DmbgvMbv.js                              170.48 kB │ gzip:  58.79 kB
+dist/assets/west-bengal-FYLWMHNK-Cw7I1XY6.js                               179.20 kB │ gzip:  60.78 kB
+dist/assets/odisha-P442QMAE-DEvGqgXQ.js                                    187.80 kB │ gzip:  58.85 kB
+dist/assets/andhra-pradesh-ONQ4SEP6-ETh_aDr9.js                            198.72 kB │ gzip:  69.71 kB
+dist/assets/bihar-SMQQI5AI-CES-zWwj.js                                     202.23 kB │ gzip:  64.15 kB
+dist/assets/tamil-nadu-37WIHFTS-DyiXFNTi.js                                219.56 kB │ gzip:  73.48 kB
+dist/assets/karnataka-B33225WD-C1y5fFIs.js                                 225.62 kB │ gzip:  75.86 kB
+dist/assets/gujarat-RKZVR4O3-UPbM8P2b.js                                   242.75 kB │ gzip:  85.41 kB
+dist/assets/rajasthan-52JI5NBX-X9RZPsOS.js                                 304.85 kB │ gzip: 101.68 kB
+dist/assets/maharashtra-7M3EIJAZ-fq3_j4Ux.js                               309.10 kB │ gzip: 102.46 kB
+dist/assets/madhya-pradesh-4IWYTYII-KjGwoGol.js                            421.17 kB │ gzip: 139.61 kB
+dist/assets/uttar-pradesh-LGQHZQAR-BgCHgqha.js                             460.16 kB │ gzip: 151.67 kB
+dist/assets/index-DGlioxmV.js                                              986.99 kB │ gzip: 340.93 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 6.61s

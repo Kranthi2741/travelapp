@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Maps Route Tester</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+    }
+
+    .panel {
+      background: white;
+      padding: 20px;
+      box-shadow: 0 2px 8px #0001;
+    }
+
+    h2 { margin-top: 0; }
+
+    .inputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    input, select, button {
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    button {
+      background: #1677ff;
+      color: white;
+      border: 0;
+      cursor: pointer;
+    }
+
+    button:hover { background: #095dcc; }
+
+    #result {
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    #map {
+      height: 68vh;
+      min-height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="panel">
+    <h2>Google Maps Directions</h2>
+
+    <div class="inputs">
+      <input id="from" placeholder="From: Hyderabad">
+      <input id="to" placeholder="To: Vijayawada">
+
+      <select id="mode">
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Cycling</option>
+        <option value="TRANSIT">Public transit</option>
+      </select>
+
+      <button onclick="getDirections()">Get Directions</button>
+    </div>
+
+    <div id="result">Enter your starting point and destination.</div>
+  </div>
+
+  <div id="map"></div>
+
+  <script>
+    let map;
+    let directionsService;
+    let directionsRenderer;
+    let autocompleteFrom;
+    let autocompleteTo;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 17.385, lng: 78.4867 },
+        zoom: 7,
+        mapTypeControl: true,
+        fullscreenControl: true
+      });
+
+      directionsService = new google.maps.DirectionsService();
+
+      directionsRenderer = new google.maps.DirectionsRenderer({
+        map: map,
+        suppressMarkers: false
+      });
+
+      // Optional place suggestions while typing
+      if (google.maps.places) {
+        autocompleteFrom = new google.maps.places.Autocomplete(
+          document.getElementById("from"),
+          { fields: ["formatted_address", "geometry", "name"] }
+        );
+
+        autocompleteTo = new google.maps.places.Autocomplete(
+          document.getElementById("to"),
+          { fields: ["formatted_address", "geometry", "name"] }
+        );
+      }
+
+      document.getElementById("from").value = "Hyderabad, Telangana";
+      document.getElementById("to").value = "Vijayawada, Andhra Pradesh";
+    }
+
+    function getDirections() {
+      const origin = document.getElementById("from").value.trim();
+      const destination = document.getElementById("to").value.trim();
+      const travelMode = document.getElementById("mode").value;
+      const result = document.getElementById("result");
+
+      if (!origin || !destination) {
+        result.textContent = "Please enter both locations.";
+        return;
+      }
+
+      result.textContent = "Finding the best available route...";
+
+      directionsService.route({
+        origin: origin,
+        destination: destination,
+        travelMode: google.maps.TravelMode[travelMode]
+      }, (response, status) => {
+        if (status === "OK") {
+          directionsRenderer.setDirections(response);
+
+          const route = response.routes[0];
+          const legs = route.legs;
+
+          let distance = 0;
+          let duration = 0;
+
+          legs.forEach(leg => {
+            distance += leg.distance.value;
+            duration += leg.duration.value;
+          });
+
+          result.innerHTML =
+            "<strong>Route found!</strong><br>" +
+            "From: " + legs[0].start_address + "<br>" +
+            "To: " + legs[legs.length - 1].end_address + "<br>" +
+            "Distance: " + (distance / 1000).toFixed(1) + " km<br>" +
+            "Estimated travel time: " +
+            Math.round(duration / 60) + " minutes";
+        } else {
+          result.textContent =
+            "Could not calculate route (" + status +
+            "). Check API settings, billing, and supported travel mode.";
+          console.error("Directions error:", status);
+        }
+      });
+    }
+  </script>
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC__nj9F_3yLeySUbjS1Y7yMfmvGrTwyWI&loading=async&callback=initMap&libraries=places&v=weekly">
+  </script>
+
+</body>
+</html>
