@@ -8,7 +8,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-process.loadEnvFile?.(path.join(__dirname, '.env'));
+const envFile = path.join(__dirname, '.env');
+if (process.loadEnvFile && fs.existsSync(envFile)) process.loadEnvFile(envFile);
 const DATA_DIR = path.join(__dirname, 'data');
 const UPLOAD_DIR = path.join(__dirname, 'uploads');
 const MYSQL_HOST = process.env.MYSQL_HOST || '127.0.0.1';
