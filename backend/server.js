@@ -16,6 +16,7 @@ const MYSQL_PORT = Number(process.env.MYSQL_PORT || 3306);
 const MYSQL_USER = process.env.MYSQL_USER || 'root';
 const MYSQL_PASSWORD = process.env.MYSQL_PASSWORD || '';
 const MYSQL_DATABASE = process.env.MYSQL_DATABASE || 'travelapp';
+const MYSQL_SSL = String(process.env.MYSQL_SSL || '').toLowerCase() === 'true';
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
@@ -54,7 +55,8 @@ const mysqlPool = mysql.createPool({
   database: MYSQL_DATABASE,
   waitForConnections: true,
   connectionLimit: 10,
-  dateStrings: true
+  dateStrings: true,
+  ...(MYSQL_SSL ? { ssl: { rejectUnauthorized: false } } : {})
 });
 
 async function initializeDatabase() {
