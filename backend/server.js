@@ -18,6 +18,7 @@ const MYSQL_USER = process.env.MYSQL_USER || 'root';
 const MYSQL_PASSWORD = process.env.MYSQL_PASSWORD || '';
 const MYSQL_DATABASE = process.env.MYSQL_DATABASE || 'travelapp';
 const MYSQL_SSL = String(process.env.MYSQL_SSL || '').toLowerCase() === 'true';
+const CORS_ORIGIN = process.env.CORS_ORIGIN || 'https://roamly-frontend-n69w.onrender.com';
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
@@ -202,6 +203,18 @@ for (const method of ['get', 'post', 'put', 'patch', 'delete']) {
 }
 app.use(express.json({ limit: '2mb' }));
 app.use('/uploads', express.static(UPLOAD_DIR));
+
+// The frontend is hosted separately from the API in production.
+app.use((req, res, next) => {
+  if (req.headers.origin === CORS_ORIGIN) {
+    res.setHeader('Access-Control-Allow-Origin', CORS_ORIGIN);
+    res.setHeader('Vary', 'Origin');
+  }
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
 
 app.use((_req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
